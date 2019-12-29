@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Shell Page</title>
+  </head>
+  <body>
+    <div class="header">edwisor Blog Application</div>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+      <!-- Toggler/collapsibe Button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsibleNavbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a [routerLink]="['/home']" [routerLinkActive]="['active']" routerLinkActiveOptions="{exact : true}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/blogs/create']" [routerLinkActive]="['active']" routerLinkActiveOptions="{exact : true}">Post a Blog</a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/about']" [routerLinkActive]="['active']" routerLinkActiveOptions="{exact : true}">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </body>
+</html>
+<router-outlet> </router-outlet>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" *ngIf="currentBlog">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="display-4 text-center">
+            {{ currentBlog.title | uppercase }}<br />
+            <h5 class="text-muted text-center">
+              Posted by {{ currentBlog.author }} on
+              {{ currentBlog.lastModified | date }}
+            </h5>
+          </h3>
+          <hr class="my-3" />
+          <p class="lead text-center">{{ currentBlog.description }}</p>
+          <div [innerHtml]="currentBlog.bodyHtml" class="text-center"></div>
+          <hr class="my-3" />
+          <p class="lead text-center">{{ currentBlog.category }}</p>
+          <div *ngIf="currentBlog.tags != undefined && currentBlog.tags.length > 0"
+            class="text-center">Tags: <span *ngFor="let alltags of currentBlog.tags; let last = last">
+              {{ alltags }}{{ last ? "" : "," }}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row btngrp">
+        <div class="col-md-4 text-center">
+            <a class="btn btn-primary" role="button" [routerLink]="['/blogs/edit', currentBlog.blogId]">Edit</a>
+        </div>
+        <div class="col-md-4 text-center">
+            <a class="btn btn-danger" role="button" (click)="deleteCurrentBlog()">Delete</a>
+        </div>
+        <div class="col-md-4 text-center">
+            <a class="btn btn-secondary" role="button" (click)= "goback()">Go Back</a>
+        </div>
+    </div>
+    </div>
+    
+  </body>
+</html>

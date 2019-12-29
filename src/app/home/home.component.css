@@ -1,0 +1,10 @@
+.card-margin{
+    margin: 2em;
+}
+.header{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: grey;
+    text-align: center;
+    text-decoration: underline;
+}

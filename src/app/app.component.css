@@ -1,0 +1,17 @@
+
+.header{
+    background-color: #04192E;
+    display: block;
+    padding: 3%;
+    color:white;
+    font-size: 26px;
+    text-align: center;
+}
+.navbar-nav li a{
+    color: white;
+    padding: 0 2em;
+}
+.active{
+    color:red !important;
+}
+
